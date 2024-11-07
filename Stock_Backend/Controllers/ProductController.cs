@@ -29,7 +29,7 @@ namespace Stock_Backend.Controllers
         [HttpGet( "{id}" )]
         public async Task<IActionResult> Get( int id )
         {
-            var query = new GetProductByIdCommand(id);
+            var query = new GetProductByIdQuery(id);
 
             var result = await _mediator.Send(query);
 

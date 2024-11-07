@@ -21,7 +21,7 @@ namespace Stock_Backend.Test.Application
         {
             var product = new ProductDto { Id = 1, Name = "Product 1", PartNumber = "PN123", AverageCostPrice = 5.3m };
 
-            var command = new GetProductByIdCommand(1);
+            var command = new GetProductByIdQuery(1);
 
             var productMockSetup = _productRepositoryMock.Setup( o => o.GetProductById( 1 ) );
 
@@ -38,7 +38,7 @@ namespace Stock_Backend.Test.Application
         [Fact]
         public async Task Should_Return_Null_If_Product_Not_Found()
         {
-            var command = new GetProductByIdCommand(1);
+            var command = new GetProductByIdQuery(1);
 
             var productMockSetup = _productRepositoryMock.Setup( o => o.GetProductById( 1 ) );
 

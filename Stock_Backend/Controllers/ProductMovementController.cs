@@ -33,7 +33,7 @@ namespace Stock_Backend.Controllers
         [HttpGet( "dailyMovement" )]
         public async Task<ActionResult<List<ProductMovementDto>>> GetDailyProductMovement( [FromQuery] DateTime date )
         {
-            var query = new DailyProductMovementRequestCommand(date);
+            var query = new DailyProductMovementRequestQuery(date);
 
             var result = await _mediator.Send(query);
 

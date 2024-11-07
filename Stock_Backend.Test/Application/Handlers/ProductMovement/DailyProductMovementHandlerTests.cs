@@ -27,7 +27,7 @@ namespace Stock_Backend.Test.Application.Handlers.ProductMovement
 
             productMockSetup.ReturnsAsync( expectedMovements );
 
-            var command = new DailyProductMovementRequestCommand(movementRequest.MovementDate);
+            var command = new DailyProductMovementRequestQuery(movementRequest.MovementDate);
 
             var result = await _handler.Handle(command, CancellationToken.None);
 

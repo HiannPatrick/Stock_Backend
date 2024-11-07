@@ -4,7 +4,7 @@ using Stock_Backend.Infrastructure;
 
 namespace Stock_Backend.Application
 {
-    public class DailyProductMovementHandler :IRequestHandler<DailyProductMovementRequestCommand, List<DailyProductMovementResponseDto>>
+    public class DailyProductMovementHandler :IRequestHandler<DailyProductMovementRequestQuery, List<DailyProductMovementResponseDto>>
     {
         private readonly IProductMovementRepository _productMovementRepository;
 
@@ -13,7 +13,7 @@ namespace Stock_Backend.Application
             _productMovementRepository = productMovementRepository;
         }
 
-        public async Task<List<DailyProductMovementResponseDto>> Handle( DailyProductMovementRequestCommand request, CancellationToken cancellationToken )
+        public async Task<List<DailyProductMovementResponseDto>> Handle( DailyProductMovementRequestQuery request, CancellationToken cancellationToken )
         {
             var dailyProductMovementRequest = new DailyProductMovementRequestDto
             {
